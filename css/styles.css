@@ -1,0 +1,110 @@
+body {
+  color: #333333;
+  font-family: "Verdana";
+  line-height: 30px;
+  text-align: center;
+}
+
+main {
+  margin: 100px auto;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.awesome-title {
+  color: #85004B;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  word-spacing: 0.4em;
+  font-weight: bold;
+}
+
+.awesome-ball {
+  background-color: #D04694;
+  border: solid 2px #C4257F;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  animation-name: floating;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* OR: animation-name: floating ease-in-out 2s infinite; */
+}
+
+.awesome-ball:hover {
+  background-color: #DF6FAE;
+}
+
+.awesome-shadow {
+  width: 100px;
+  height: 1px;
+  box-shadow: 0px 13px 10px #000;
+  border-radius: 50%;
+
+  animation-name: shadow-size-change;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  /* OR: animation-name: shadow-size-change ease-in-out 2s infinite; */
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes shadow-size-change {
+  0% {
+    width: 100px;
+  }
+  50% {
+    width: 200px;
+  }
+  100% {
+    width: 100px;
+  }
+}
+
+
+/* ==== styles loader ======= */
+.loader {
+  height: 100px;
+  animation: spin linear 2s infinite;
+}
+
+.loading-text {
+  color: grey;
+  margin-top: 20px;
+  animation: text-animation 1s infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    color: grey;
+  }
+  50% {
+    color: #C4257F;
+  }
+}
